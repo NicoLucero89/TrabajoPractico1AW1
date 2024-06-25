@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Farmacias Ponte</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(216, 231, 129, 0.938);
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .header-title {
+            font-size: 30pt;
+            color: rgba(16, 161, 23, 0.692);
+        }
+        .logo {
+            width: 300px;
+            height: 157px;
+        }
+        .container-md {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #155E46;
+        }
+        .navbar {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .navbar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .navbar a:hover {
+            color: #F1F1F1;
+        }
+        .PanelIzquierdo {
+            width: 20%;
+            background-color: lightgrey;
+            padding: 10px;
+            height: 100%;
+        }
+        .PanelCentral {
+            width: 80%;
+            padding: 10px;
+            height: 100%;
+        }
+        .Etiqueta {
+            font-weight: bold;
+        }
+        .Boton {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        .Boton:hover {
+            background-color: #155E46;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1 class="header-title">Farmacias Ponte</h1>
+    <img src="assets/logo farmacias ponte.png" border="0" alt="Home page" WIDTH="300" HEIGHT="157">
+</header>
+
+<nav class="navbar">
+    <a href="./index.html">Pagina Principal</a>
+    <a href="./home.html">Home</a>
+    <a href="./comandos.html">Comandos</a>
+    <button>logout</button>
+</nav>
+
+<table class="PanelArriba" width="900px" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr height="200px" valign="TOP">
+        <td align="center">
+            <script type="text/javascript" language="JavaScript">
+                
+            </script>
+        </td>
+        <td width="2%"></td>
+    </tr>
+</table>
+
+<table width="1%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr valign="top">
+        <td>
+            <table height="100%" bgcolor="lightgrey" border="0" cellspacing="0" cellpadding="2">
+                <tr valign="top" height="230px">
+                    <td id="LeftPane" class="PanelIzquierdo" valign="top" align="center">
+                       
+                        </table>
+                    </td>
+                    <td id="ContentPane" class="PanelCentral" valign="top" align="center">
+                        <form action="mailto:aperez@ies21.com.ar" method="post" name="Alumno">
+                            <table bgcolor="white" align="center" cellspacing="1" cellpadding="2" border="1" width="300px">
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><strong><font size="2">&nbsp;Registro de Cliente</font></strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">DNI</td>
+                                    <td><input type="text" name="Dni" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Nombre y Apellido</td>
+                                    <td><input type="text" name="Nombre" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Email</td>
+                                    <td><input type="text" name="Email" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Fec.Nacimiento</td>
+                                    <td><input type="text" name="FechaDeNacimiento" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Contraseña</td>
+                                    <td><input type="password" name="password" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td height="4">&nbsp;</td>
+                                    <td height="4">
+                                        <input class="Boton" type="button" value="Enviar" onClick="Validar(this.form)">
+                                        <input class="Boton" type="reset" value="Reset">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <table class="PanelInferior" width="600px" border="0" cellspacing="0" cellpadding="0">
+                <tr valign="top">
+                    <td id="FooterPane" height="20px" class="Etiqueta" width="100%" valign="top" align="center">
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

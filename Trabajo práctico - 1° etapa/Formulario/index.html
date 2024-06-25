@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Farmacias Ponte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D8E779; /* Color de fondo para toda la página */
+        }
+        .header {
+            background-color: rgba(216, 231, 129, 0.938);
+            padding: 10px;
+            text-align: center;
+        }
+        .header-title {
+            font-size: 30pt;
+            color: rgba(16, 161, 23, 0.692);
+            margin-right: 30%;
+            margin-left: 40%;
+        }
+        .logo {
+            width: 300px;
+            height: 157px;
+            margin-top: 20px;
+        }
+        .navbar {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        .navbar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .navbar a:hover {
+            color: #F1F1F1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .title-text {
+            color: #102A17;
+            margin-top: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        .btn-primary {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #155E46;
+        }
+        .btn-secondary {
+            background-color: #CCCCCC;
+            color: #333333;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .btn-secondary:hover {
+            background-color: #BBBBBB;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1 class="header-title">Farmacias Ponte</h1>
+    <img src="assets/logo farmacias ponte.png" border="0" alt="Home page" WIDTH="300" HEIGHT="157">
+</header>
+
+<nav class="navbar">
+    <div class="container">
+        <a href="./home.html">Home</a>
+        <a href="./comandos.html">Link</a>
+        <a href="./registro.html">Registro</a>
+        <div class="dropdown">
+            
+            
+        </div>
+        
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<section class="container">
+    <h1 class="title-text">Nuestros Productos</h1>
+    <ul>
+        <li><a href="./dermocosmetica.html">Dermocosmética</a></li>
+        <li><a href="./perfumeria.html">Perfumería</a></li>
+        <li><a href="./higiene.html">Higiene Personal</a></li>
+    </ul>
+</section>
+
+<section class="form-container container">
+    <form action="" method="post">
+        <label for="txtEmail"><b>Email:</b></label>
+        <input type="email" name="txtEmail" id="txtEmail" required class="form-control">
+        
+        <label for="txtPass"><b>Contraseña:</b></label>
+        <input type="password" name="txtPass" id="txtPass" required class="form-control">
+
+        <label for="date"><b>Fecha de Nacimiento:</b></label>
+        <input type="date" name="date" id="date" required class="form-control">
+
+        <div>
+            <input type="submit" value="Confirmar" class="btn btn-primary">
+            <input type="reset" value="Cancelar" class="btn btn-secondary">
+        </div>
+    </form>
+</section>
+
+</body>
+</html>

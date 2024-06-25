@@ -1,0 +1,73 @@
+body{
+    background-color: rgba(18, 10, 129, 0);
+}
+
+.container{
+
+background: rgba(15, 177, 42, 0.952);
+color: rgb(0, 0, 15);
+margin: 10px;
+padding: 10px;
+width: 30%;
+border: 5px,solid rgb(126, 219, 173);
+border-radius: 1rem;
+}
+.tittle-text{
+    color: rgb(2, 34, 11);
+    text-decoration: underline;
+   font-size: 30px;
+   font-weight: bolder;
+   text-align: center;
+
+}
+
+#Ingrese{
+color: rgb(189, 20, 20);
+}
+.button{
+height: 30px;
+width: 70px;
+border: 0px;
+border-radius: 20px;
+font-weight: bolder;
+color: aliceblue;
+cursor: pointer;
+} 
+.button-login{
+    background-color: green;
+} 
+.button-logout{
+    background-color: rgb(141, 43, 43);
+} 
+
+.button:hover{
+   
+    transition: all ease-in-out 0.5s;
+} 
+.button-login:hover{
+    background-color: rgb(9, 221, 9);
+    
+} 
+
+.button-logout:hover{
+    background-color: rgb(252, 10, 10);
+    
+} 
+
+.button-user{
+    border-radius: 50%;
+    height: 30px;
+    border: 0px;
+    background-color: aqua;
+    color: blue;
+    cursor: pointer;
+} 
+
+.button-user:hover{
+    
+    background-color: rgb(193, 245, 245);
+    transition: all ease-in-out 1s;
+} 
+
+
+
