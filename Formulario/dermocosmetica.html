@@ -1,26 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmacias Ponte</title>
-    <B STYLE="font-size:24pt;color:rgba(16, 161, 23, 0.692);margin-right: 40%;margin-left: 40%;">Farmacias Ponte</B>.
-    <style>body  {background-color: rgba(216, 231, 129, 0.938); }</style> <!-- Color de fondo de la pagina -->  
+    <title>Farmacias Ponte - Dermocosmetica</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <h1>Perfumes</h1>
-    <!-- Dermocosmetica -->
-    <article>
-        <h4>
-            <u>Productos</u>
-        </h4>
-        <img src="assets/laroche crema.png" alt="Crema Laroche Posay">
-            <p>
-                Experto en el Cuidado de las Pieles Más Sensibles.
+    <header>
+        <h1 class="header-title">Farmacias Ponte</h1>
+        <img src="assets/logo farmacias ponte.png" alt="Farmacias Ponte Logo" class="logo">
+    </header>
 
-            </p>
-            <a href="https://www.farmaciasponte.com/?gclid=CjwKCAjwoa2xBhACEiwA1sb1BEoeE5n55xcFp-8_3cEsGQPEwu270xbcdXFlVkkfQmBL7DUERfOkPhoCcaYQAvD_BwE" target="_blank" rel="noopener noreferrer">Pagina oficial de Farmacias Ponte</a>
-            
-        </article>
+    <nav class="navbar">
+        <div class="container" id="navbarLinks">
+            <!-- Aquí se generará dinámicamente el contenido -->
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <h2 class="mb-4">Dermocosmetica</h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Ejemplo de tarjeta de producto -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 1</h5>
+                        <p class="card-text">Descripción del producto 1.</p>
+                        <p class="card-text">$100</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary button-minus" type="button">-</button>
+                                <input type="text" class="form-control quantity-input text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary button-plus" type="button">+</button>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+            <!--  más productos -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Producto 2</h5>
+                        <p class="card-text">Descripción del producto 2.</p>
+                        <p class="card-text">$100</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary button-minus" type="button">-</button>
+                                <input type="text" class="form-control quantity-input text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary button-plus" type="button">+</button>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-1 g-2">
+                <!-- Ejemplo de tarjeta de producto -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 3</h5>
+                            <p class="card-text">Descripción del producto 3.</p>
+                            <p class="card-text">$100</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary button-minus" type="button">-</button>
+                                    <input type="text" class="form-control quantity-input text-center" value="1" readonly>
+                                    <button class="btn btn-outline-secondary button-plus" type="button">+</button>
+                                </div>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+    </main>
+
+    <!-- Modal para confirmación de añadir al carrito -->
+    <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addToCartModalLabel">Añadir al Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Producto añadido al carrito correctamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="./carrito.html" class="btn btn-primary">Ir al Carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para manejar la cantidad de productos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener todos los botones + y - dentro de las tarjetas
+            const buttonsPlus = document.querySelectorAll('.button-plus');
+            const buttonsMinus = document.querySelectorAll('.button-minus');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+
+            // Agregar evento clic para el botón +
+            buttonsPlus.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    quantityInputs[index].value = currentValue + 1;
+                });
+            });
+
+            // Agregar evento clic para el botón -
+            buttonsMinus.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    let currentValue = parseInt(quantityInputs[index].value);
+                    if (currentValue > 1) {
+                        quantityInputs[index].value = currentValue - 1;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Script para generar dinámicamente los enlaces del navbar -->
+<script>
+    // Definir el array de páginas
+    const pages = [
+        { title: 'Inicio', url: './index.html' },
+        { title: 'Dermocosmética', url: './dermocosmetica.html' },
+        { title: 'Perfumería', url: './perfumeria.html' },
+        { title: 'Higiene Personal', url: './higiene.html' },
+        { title: 'Carrito', url: './carrito.html' }
+    ];
+
+    // Obtener referencia al contenedor del navbar
+    const navbarLinks = document.getElementById('navbarLinks');
+
+    // Generar los enlaces del navbar
+    pages.forEach(page => {
+        const link = document.createElement('a');
+        link.href = page.url;
+        link.textContent = page.title;
+        navbarLinks.appendChild(link);
+    });
+</script>
 </html>

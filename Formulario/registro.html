@@ -1,260 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head  >
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Farmacias Ponte</title>
-    <B STYLE="font-size:24pt;color:rgba(16, 161, 23, 0.692);margin-right: 40%;margin-left: 40%;">Farmacias Ponte</B>.
-    <style>body  {background-color: rgba(216, 231, 129, 0.938); }</style> <!-- Color de fondo de la pagina -->  
-    <!-- comentarios  lo de arriba es para colocar elcolor del titulo--> 
-    <table valign="top" width="100px" border="0" cellspacing="0" cellpadding="0" bgcolor=white>
-        <tr>
-          <td rowspan="2" valign="top">
-            
-          <img src="assets/logo farmacias ponte.png" border="0" alt="Home page" WIDTH="152" HEIGHT="157"><br></td>
-          
-          
-        </tr>
-        </table>
-        <header>
-        
-            <!-- Navbar -->
-                <ul>
-                    <li> <a href=" ./home.html">Home</a></li>
-                    <li> <a href=" ./comandos.html">Comandos</a></li>
-                    
-                    <br>
-                    <button>
-                        logout
-                    </button>
-                </ul>
-                
-                <br>
-               
-            </header>
-            
-            <br>
-        <SCRIPT language=JavaScript type=text/javascript>
-        <!--
-        <!--  //script para tomar y configurar la fecha
-        var pong;
-        function makeArray(n){   //función para inicializar con 0 el vector para los meses
-          this.length = n;
-          for (i=1;i<=n;i++){
-            this[i]=0;
-          }
-          return this;
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(216, 231, 129, 0.938);
+            margin: 0;
+            padding: 0;
         }
-        
-        // function para tomar la fecha, crear el vector y almacenar los meses
-        function displayDate() {
-          var this_month = new makeArray(12);
-          this_month[0]  = "Enero";
-          this_month[1]  = "Febrero";
-          this_month[2]  = "Marzo";
-          this_month[3]  = "Abril";
-          this_month[4]  = "Mayo";
-          this_month[5]  = "Junio";
-          this_month[6]  = "Julio";
-          this_month[7]  = "Agosto";
-          this_month[8]  = "Septiembre";
-          this_month[9]  = "Octubre";
-          this_month[10] = "Noviembre";
-          this_month[11] = "Diciembre";
-        
-          var this_day_e = new makeArray(7);  //crea el vector de días, lo inicializa
-          this_day_e[0]  = "Domingo";
-          this_day_e[1]  = "Lunes";
-          this_day_e[2]  = "Martes";
-          this_day_e[3]  = "Miércoles";
-          this_day_e[4]  = "Jueves";
-          this_day_e[5]  = "Viernes";
-          this_day_e[6]  = "Sábado";
-        
-//Realiza la lectura de la fecha total y por componente.
-          var today = new Date();
-          var day   = today.getDate();
-          var month = today.getMonth();
-          var year  = today.getYear();
-          var dia = today.getDay();
-            if (year < 1000) {
-               year += 1900; }   //devuelve la cadena conla fecha
-          return( " " + this_day_e[dia] + ", " + day + " de " + this_month[month] + " " + year);
+        .header {
+            text-align: center;
+            padding: 20px;
         }
-        // -->
-
-        function ValidaFecha(NomCampo, a) <!-- funcion para validar fecha --> 
-          {
-            if (a.length>7&&  !(a.split("/")[0]*1>31) && !(a.split("/")[1]*1>12)&&!(a.split("/")[2]*1<1900)&&!(a.split("/")[2]*1>2400)) 
-              return;  
-            else {
-              alert ("El formato de La fecha debe ser Dia/Mes/Año. Inténtelo de nuevo")
-              NomCampo.select();
-              NomCampo.focus();
-          }
-        }        
-        
-        function Validar(form)    //Función para validar que los campos del formulario tengan contenido
-          {        
-            
-            if (form.Dni.value == "")
-            { alert("Por favor ingrese su Dni "); form.Dni.focus(); return; }
-            
-            if (form.Nombre.value == "")
-            { alert("Por favor ingrese su Nombre"); form.Nombre.focus(); return; }
-
-            if (form.Apellido.value == "")
-            { alert("Por favor ingrese su Apellido"); form.Apellido.focus(); return; }
-
-            if (form.FechaDeNacimiento.value == "")
-            { alert("Por favor ingrese su Fecha De Nacimiento"); form.FechaDeNacimiento.focus(); return; }
-            else
-            { 
-              ValidaFecha(form.FechaDeNacimiento, form.FechaDeNacimiento.value); 
-            }
-
-            if (form.Legajo.value == "")
-            { alert("Por favor ingrese su Legajo"); form.Legajo.focus(); return; }
-            
-            form.submit();            
-          
-
-  </head>
-
-  
+        .header-title {
+            font-size: 30pt;
+            color: rgba(16, 161, 23, 0.692);
+        }
+        .logo {
+            width: 300px;
+            height: 157px;
+        }
+        .container-md {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #155E46;
+        }
+        .navbar {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .navbar a {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .navbar a:hover {
+            color: #F1F1F1;
+        }
+        .PanelIzquierdo {
+            width: 20%;
+            background-color: lightgrey;
+            padding: 10px;
+            height: 100%;
+        }
+        .PanelCentral {
+            width: 80%;
+            padding: 10px;
+            height: 100%;
+        }
+        .Etiqueta {
+            font-weight: bold;
+        }
+        .Boton {
+            background-color: #1A936F;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        .Boton:hover {
+            background-color: #155E46;
+        }
+    </style>
+</head>
 <body>
 
+<header class="header">
+    <h1 class="header-title">Farmacias Ponte</h1>
+    <img src="assets/logo farmacias ponte.png" border="0" alt="Home page" WIDTH="300" HEIGHT="157">
+</header>
 
-  <table CLASS="PanelArriba" width="600px" border="0" cellspacing="0" cellpadding="0" align="center">
-  	<tr height="20px" valign="TOP">
-    	<td align="center">
-        <script type="text/javascript" language="JavaScript">
-          
-        </script>
+<nav class="navbar">
+    <a href="./index.html">Pagina Principal</a>
+    <a href="./home.html">Home</a>
+    <a href="./comandos.html">Comandos</a>
+    <button>logout</button>
+    
+    <div class="container">
+        <!-- Enlaces de la barra de navegación -->
+        <a id="logoutBtn" href="#">Cerrar Sesión</a>
+    </div>
+    
+</nav>
 
-      </td>
-      <td width="2%"></td>
+<table class="PanelArriba" width="900px" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr height="200px" valign="TOP">
+        <td align="center">
+            <script type="text/javascript" language="JavaScript">
+                
+            </script>
+        </td>
+        <td width="2%"></td>
     </tr>
-  </table>
-
-        
-  <table width="600px" border="0" cellspacing="0" cellpadding="0" align="center">
-	<tr valign="top">
-		<td>
-			<table height="100%" bgcolor=lightgrey border="0" cellspacing="0" cellpadding="2">	          
-      
-				<tr valign="top" height="230px">
-					<td ID="LeftPane" width="10%" CLASS="PanelIzquierdo" VISIBLE="false" VALIGN="TOP" align="center" >
-    
-
-              
-             
-              <TABLE cellSpacing=0 cellPadding=0 width=143 border=0>
-                      <TBODY>
-                      <TR>  
-                        <TD class=menusec onmouseover="this.className = 'menusecover';" 
-                        onmouseout="this.className = 'menusec';" 
-                      width=143><a class=menusec onclick="this.className = 'menusec';" href="asp1.htm">Agregar</a></TD></TR></TBODY>
-              </TABLE>
-    
-              
-              
-              <TABLE cellSpacing=0 cellPadding=0 width=143 border=0>
-                      <TBODY>
-                      <TR>
-                        <TD class=menusec onmouseover="this.className = 'menusecover';" 
-                        onclick="asp1.htm" 
-                        onmouseout="this.className = 'menusec';" 
-                      width=143>Consultar</TD></TR></TBODY>
-              </TABLE>
-    
-             
-              <TABLE cellSpacing=0 cellPadding=0 width=143 border=0>
-                      <TBODY>
-                      <TR>
-                        <TD class=menusec onmouseover="this.className = 'menusecover';" 
-                        onclick="asp2.htm" 
-                        onmouseout="this.className = 'menusec';" 
-                      width=143>Inscripción</TD></TR></TBODY>
-              </TABLE>
-          
-
-          
-          </td>  
-		<td ID="ContentPane" width="80%" CLASS="PanelCentral" VISIBLE="FALSE" VALIGN="TOP" align="center">
-	
-              <form  action="mailto:aperez@ies21.com.ar" method="post" name="Alumno">
-                <table bgcolor=white align="center" cellspacing="1" cellpadding="2" border="1" width="300px">
-                  <tr>
-                    <td>&nbsp;</td> 
-                    <td><STRONG> <FONT size="2">&nbsp;Registro de Cliente</FONT></STRONG>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td CLASS="Etiqueta">DNI</td> 
-                    <td>
-                      <input type="text" name="Dni"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td CLASS="Etiqueta">Nombre y Apellido</td>
-                    <td>
-                      <input type="text" name="Nombre"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td CLASS="Etiqueta">Email</td>
-                    <td>
-                      <input type="text" name="Email"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td CLASS="Etiqueta">Fec.Nacimiento</td>
-                    <td>
-                      <input type="text" name="FechaDeNacimiento"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td CLASS="Etiqueta">Contraseña</td>
-                    <td>
-                      <input type="password" name="password"/>
-                     
-                    </td>
-                    <tr>
-                        
-                    </tr>
-                  </tr>
-                  
-                  <tr>
-                    <td height="4">&nbsp;</td>
-                    <td height="4">
-		
-                      <input CLASS="Boton" type="button" value="Enviar" onClick="Validar(this.form)"/>   
-                      <input CLASS="Boton" type="reset" value="Reset"/>
-                    </td>
-                  </tr>
-                </table>
-              </form>
-<td>&nbsp;</td>
-          </td>
-
-				</tr>
-			</table>
-		
-		<table CLASS="PanelInferior" width="600px" border="0" cellspacing="0" cellpadding="0">
-	  <tr valign="top">
-		<td ID="FooterPane" height="20px" CLASS="Etiqueta" VISIBLE="FALSE" WIDTH="100%" VALIGN="TOP" align="center">
-
-      
-   
-      </SCRIPT>    
-
-    </td>
-	  </tr>
-	</table>
-	
-    </td>
-  </tr>
 </table>
-</body>
 
+<table width="1%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr valign="top">
+        <td>
+            <table height="100%" bgcolor="lightgrey" border="0" cellspacing="0" cellpadding="2">
+                <tr valign="top" height="230px">
+                    <td id="LeftPane" class="PanelIzquierdo" valign="top" align="center">
+                       
+                        </table>
+                    </td>
+                    <td id="ContentPane" class="PanelCentral" valign="top" align="center">
+                        <form action="mailto:aperez@ies21.com.ar" method="post" name="Alumno">
+                            <table bgcolor="white" align="center" cellspacing="1" cellpadding="2" border="1" width="300px">
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td><strong><font size="2">&nbsp;Registro de Cliente</font></strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">DNI</td>
+                                    <td><input type="text" name="Dni" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Nombre y Apellido</td>
+                                    <td><input type="text" name="Nombre" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Email</td>
+                                    <td><input type="text" name="Email" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Fec.Nacimiento</td>
+                                    <td><input type="text" name="FechaDeNacimiento" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td class="Etiqueta">Contraseña</td>
+                                    <td><input type="password" name="password" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td height="4">&nbsp;</td>
+                                    <td height="4">
+                                        <input class="Boton" type="button" value="Enviar" onClick="Validar(this.form)">
+                                        <input class="Boton" type="reset" value="Reset">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <table class="PanelInferior" width="600px" border="0" cellspacing="0" cellpadding="0">
+                <tr valign="top">
+                    <td id="FooterPane" height="20px" class="Etiqueta" width="100%" valign="top" align="center">
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<form id="loginForm" action="" method="post">
+    <!-- Contenido actual del formulario -->
+</form>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío estándar del formulario
+
+        // Aquí se debería realizar la autenticación y validación de los datos
+        // Suponiendo que la autenticación es exitosa, redireccionamos al usuario a home.html
+        window.location.href = './home.html';
+    });
+</script>
+</body>
 </html>

@@ -1,0 +1,187 @@
+body{
+    background-color: rgba(160, 73, 1, 0);
+}
+
+.container{
+
+background: rgba(104, 182, 104, 0.952);
+color: rgb(0, 0, 15);
+margin: 10px;
+padding: 10px;
+width: 60%;
+border: 5px,solid rgb(126, 219, 173);
+border-radius: 1rem;
+}
+.title-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#Ingrese{
+color: rgb(189, 20, 20);
+}
+.button{
+height: 30px;
+width: 70px;
+border: 0px;
+border-radius: 20px;
+font-weight: bolder;
+color: aliceblue;
+cursor: pointer;
+} 
+.button-login{
+    background-color: green;
+} 
+.button-logout{
+    background-color: rgb(141, 43, 43);
+} 
+
+.button:hover{
+   
+    transition: all ease-in-out 0.5s;
+} 
+.button-login:hover{
+    background-color: rgb(9, 221, 9);
+    
+} 
+
+.button-logout:hover{
+    background-color: rgb(252, 10, 10);
+    
+} 
+
+.button-user{
+    border-radius: 50%;
+    height: 30px;
+    border: 0px;
+    background-color: aqua;
+    color: blue;
+    cursor: pointer;
+} 
+
+.button-user:hover{
+    
+    background-color: rgb(193, 245, 245);
+    transition: all ease-in-out 1s;
+} 
+
+/* Estilos personalizados */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #318291; /* Color de fondo para toda la página */
+}
+
+.header {
+    background-color: #318291;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-title {
+    margin: 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ejemplo de estilos para el navbar */
+.navbar {
+    background-color: #318291;
+    border-bottom: 0px solid #ddd;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #007bff;
+}
+
+.navbar a {
+    color: white; /* Color del texto */
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* Efecto hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title-text {
+    color: #102A17;
+    margin-top: 20px;
+}
+
+/* Estilos para el formulario de login */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #45a049; /* Cambio de color al hover */
+}
+
+.btn-secondary {
+    background-color: #CCCCCC;
+    color: #333333;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #BBBBBB;
+}
+
+
