@@ -8,8 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -24,16 +24,21 @@
     </nav>
 
     <main class="container py-4">
-        <h2 class="mb-4">Dermocosmetica</h2>
+        <h2 class="mb-4">Dermocosmética</h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Ejemplo de tarjeta de producto -->
+            <main class="container py-4">
+        <h2 class="mb-4">Dermocosmética</h2>
         
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <!-- Ejemplo de tarjeta de producto -->
             <div class="col">
                 <div class="card h-100">
-                    <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 1">
+                    <img src="assets/naturavia.jpg" class="card-img-top" alt="Producto 1">
                     <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">Descripción del producto 1.</p>
+                        <h5 class="card-title">Naturavia</h5>
+                        <p class="card-text">Crema facial.</p>
                         <p class="card-text">$100</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="input-group">
@@ -41,20 +46,20 @@
                                 <input type="text" class="form-control quantity-input text-center" value="1" readonly>
                                 <button class="btn btn-outline-secondary button-plus" type="button">+</button>
                             </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+                            <button class="btn btn-primary btn-add-to-cart" data-product-id="Naturavia">Añadir al Carrito</button>
                         </div>
                     </div>
                 </div>
             </div>
-           
 
-            <!--  más productos -->
+            <!-- Más productos -->
+            <!-- Repite la estructura para otros productos -->
             <div class="col">
                 <div class="card h-100">
                     <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 2">
                     <div class="card-body">
-                        <h5 class="card-title">Producto 2</h5>
-                        <p class="card-text">Descripción del producto 2.</p>
+                        <h5 class="card-title">laroche crema</h5>
+                        <p class="card-text">crema para piel.</p>
                         <p class="card-text">$100</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="input-group">
@@ -62,36 +67,38 @@
                                 <input type="text" class="form-control quantity-input text-center" value="1" readonly>
                                 <button class="btn btn-outline-secondary button-plus" type="button">+</button>
                             </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+                            <button class="btn btn-primary btn-add-to-cart" data-product-id="laroche crema">Añadir al Carrito</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-1 g-2">
-                <!-- Ejemplo de tarjeta de producto -->
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Producto 3</h5>
-                            <p class="card-text">Descripción del producto 3.</p>
-                            <p class="card-text">$100</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="input-group">
-                                    <button class="btn btn-outline-secondary button-minus" type="button">-</button>
-                                    <input type="text" class="form-control quantity-input text-center" value="1" readonly>
-                                    <button class="btn btn-outline-secondary button-plus" type="button">+</button>
-                                </div>
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="assets/libracosmetica.webp" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Libra</h5>
+                        <p class="card-text">Crema Corporal.</p>
+                        <p class="card-text">$100</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary button-minus" type="button">-</button>
+                                <input type="text" class="form-control quantity-input text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary button-plus" type="button">+</button>
                             </div>
+                            <button class="btn btn-primary btn-add-to-cart" data-product-id="Libra">Añadir al Carrito</button>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-    </main>
+
+        </div>
+    </main
+
+           
+
+        
+   
 
     <!-- Modal para confirmación de añadir al carrito -->
     <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
@@ -114,33 +121,50 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Script para manejar la cantidad de productos -->
+    <!-- Script para manejar la cantidad de productos y agregar al carrito -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todos los botones + y - dentro de las tarjetas
-            const buttonsPlus = document.querySelectorAll('.button-plus');
-            const buttonsMinus = document.querySelectorAll('.button-minus');
-            const quantityInputs = document.querySelectorAll('.quantity-input');
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
 
-            // Agregar evento clic para el botón +
-            buttonsPlus.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    let currentValue = parseInt(quantityInputs[index].value);
-                    quantityInputs[index].value = currentValue + 1;
-                });
-            });
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    const productId = event.target.getAttribute('data-product-id');
+                    const productName = 'Producto ' + productId; // Aquí puedes obtener dinámicamente el nombre del producto
+                    const productPrice = 100; // Precio del producto (ejemplo)
 
-            // Agregar evento clic para el botón -
-            buttonsMinus.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    let currentValue = parseInt(quantityInputs[index].value);
-                    if (currentValue > 1) {
-                        quantityInputs[index].value = currentValue - 1;
+                    const product = {
+                        id: productId,
+                        nombre: productName,
+                        precio: productPrice
+                        // Puedes agregar más propiedades como descripción, imagen, etc.
+                    };
+
+                    // Obtener o inicializar el array de productos en el carrito
+                    let productosEnCarrito = JSON.parse(localStorage.getItem('productosEnCarrito')) || [];
+
+                    // Verificar si el producto ya está en el carrito por su ID
+                    const existingProductIndex = productosEnCarrito.findIndex(item => item.id === product.id);
+
+                    if (existingProductIndex !== -1) {
+                        // Si el producto ya está en el carrito, aumentar su cantidad
+                        productosEnCarrito[existingProductIndex].cantidad++;
+                    } else {
+                        // Si el producto no está en el carrito, agregarlo con cantidad 1
+                        product.cantidad = 1;
+                        productosEnCarrito.push(product);
                     }
+
+                    // Guardar el array actualizado en el localStorage
+                    localStorage.setItem('productosEnCarrito', JSON.stringify(productosEnCarrito));
+
+                    // Mostrar modal de confirmación de añadir al carrito (opcional)
+                    const modal = new bootstrap.Modal(document.getElementById('addToCartModal'));
+                    modal.show();
                 });
             });
         });
     </script>
+    
 </body>
 
 <!-- Bootstrap JS -->

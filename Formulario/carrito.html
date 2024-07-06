@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmacias Ponte - Dermocosmética</title>
+    <title>Farmacias Ponte - Carrito de compras</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -15,6 +15,7 @@
     <header>
         <h1 class="header-title">Farmacias Ponte</h1>
         <img src="assets/logo farmacias ponte.png" alt="Farmacias Ponte Logo" class="logo">
+        <p>Bienvenido, <span id="username"></span></p>
     </header>
 
     <nav class="navbar">
@@ -24,33 +25,9 @@
     </nav>
 
     <main class="container py-4">
-        <h2 class="mb-4">Dermocosmética</h2>
-        
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Ejemplo de tarjeta de producto -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="assets/laroche crema.png" class="card-img-top" alt="Producto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Producto 1</h5>
-                        <p class="card-text">Descripción del producto 1.</p>
-                        <p class="card-text">$100</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="input-group">
-                                <button class="btn btn-outline-secondary" type="button" id="button-minus">-</button>
-                                <input type="text" id="quantity" class="form-control text-center" value="1" readonly>
-                                <button class="btn btn-outline-secondary" type="button" id="button-plus">+</button>
-                            </div>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal">Añadir al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin del ejemplo -->
-
-            <!-- Repite el bloque de tarjeta para más productos -->
-            <!-- ... -->
-
+        <h2 class="mb-4">Carrito de Compras</h2>
+        <div id="cart-items" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Aquí se mostrarán dinámicamente los productos del carrito -->
         </div>
     </main>
 
@@ -73,33 +50,56 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS y Script Personalizado -->
+    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            let productosEnCarrito = JSON.parse(localStorage.getItem('productosEnCarrito')) || [];
+
+            productosEnCarrito.forEach(producto => {
+                const cardHtml = `
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">${producto.nombre}</h5>
+                                <p class="card-text">Cantidad: ${producto.cantidad}</p>
+                                <p class="card-text">Precio unitario: $${producto.precio}</p>
+                                <p class="card-text">Total: $${producto.cantidad * producto.precio}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.innerHTML += cardHtml;
+            });
+        });
+    </script>
+   
+
+    <!-- Script para generar dinámicamente los enlaces del navbar -->
+    <script>
+        // Definir el array de páginas
+        const pages = [
+            { title: 'Inicio', url: './index.html' },
+            { title: 'Dermocosmética', url: './dermocosmetica.html' },
+            { title: 'Perfumería', url: './perfumeria.html' },
+            { title: 'Higiene Personal', url: './higiene.html' },
+            { title: 'Carrito', url: './carrito.html' }
+        ];
+
+        // Obtener referencia al contenedor del navbar
+        const navbarLinks = document.getElementById('navbarLinks');
+
+        // Generar los enlaces del navbar
+        pages.forEach(page => {
+            const link = document.createElement('a');
+            link.href = page.url;
+            link.textContent = page.title;
+            navbarLinks.appendChild(link);
+        });
+    </script>
+
+
 </body>
-
-!-- Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<!-- Script para generar dinámicamente los enlaces del navbar -->
-<script>
-    // Definir el array de páginas
-    const pages = [
-        { title: 'Inicio', url: './index.html' },
-        { title: 'Dermocosmética', url: './dermocosmetica.html' },
-        { title: 'Perfumería', url: './perfumeria.html' },
-        { title: 'Higiene Personal', url: './higiene.html' },
-        { title: 'Carrito', url: './carrito.html' }
-    ];
-
-    // Obtener referencia al contenedor del navbar
-    const navbarLinks = document.getElementById('navbarLinks');
-
-    // Generar los enlaces del navbar
-    pages.forEach(page => {
-        const link = document.createElement('a');
-        link.href = page.url;
-        link.textContent = page.title;
-        navbarLinks.appendChild(link);
-    });
-</script>
 </html>
+

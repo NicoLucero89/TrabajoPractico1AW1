@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "nombre": "Producto 1",
+        "nombre": "laroche crema",
         "descripcion": "Descripción del producto 1.",
         "precio": 100,
         "categoria": "Dermocosmética",
-        "imagen": "assets/laroche crema.jpg"
+        "imagen": "assets/laroche crema.png"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "descripcion": "Descripción del producto 2.",
         "precio": 120,
         "categoria": "Dermocosmética",
-        "imagen": "assets/producto2.jpg"
+       "imagen": "assets/laroche crema.png"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "descripcion": "Descripción del producto 3.",
         "precio": 90,
         "categoria": "Perfumería",
-        "imagen": "assets/producto3.jpg"
+        "imagen": "assets/chanel perfume.png"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "descripcion": "Descripción del producto 4.",
         "precio": 80,
         "categoria": "Perfumería",
-        "imagen": "assets/producto4.jpg"
+        "imagen": "assets/chanel perfume.png"
     },
     {
         "id": 5,
